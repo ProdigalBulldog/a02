@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Hand
   # This is a *factory method* that creates and returns a `Hand`
   # object.

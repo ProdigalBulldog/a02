@@ -1,5 +1,4 @@
 require_relative 'player'
-require 'byebug'
 
 class Dealer < Player
   attr_reader :bets
@@ -25,6 +24,8 @@ class Dealer < Player
   end
 
   def pay_bets
-    player.pay_winnings if player.hand.beats? (self.hand)
+    @bets.each do |player, amount|
+      player.pay_winnings(amount * 2) if player.hand.beats? (self.hand)
+    end
   end
 end
